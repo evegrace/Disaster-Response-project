@@ -125,14 +125,6 @@ def evaluate_metrics(actual, predicted, col_names):
       
     return metrics_df
 
-
-
-def save_model(model, model_filepath):
-    '''
-    Save model as a pickle file 
-    '''
-    joblib.dump(model, model_filepath)
-
 def evaluate_model(model, X_test, Y_test, category_names):
  
     # Predict labels for test dataset
@@ -142,6 +134,14 @@ def evaluate_model(model, X_test, Y_test, category_names):
     eval_metrics = evaluate_metrics(np.array(Y_test), Y_pred, category_names)
     print(eval_metrics)
    
+
+
+def save_model(model, model_filepath):
+    '''
+    Save model as a pickle file 
+    '''
+    joblib.dump(model, model_filepath)
+
 
 
 def main():
